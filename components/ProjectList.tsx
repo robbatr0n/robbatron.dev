@@ -46,21 +46,24 @@ function ProjectRow({
         <StatusDot status={project.status} />
 
         <div className="flex-1 flex justify-between items-center gap-4 min-w-0">
-          <div className="min-w-0 flex items-baseline gap-2">
-            {/* primary — title */}
-            <span className="font-mono text-sm font-medium text-neutral-900 group-hover:text-neutral-500 transition-colors">
-              {project.title}
-            </span>
-            {/* separator */}
-            <span className="font-mono text-xs text-neutral-400 hidden sm:inline">
-              —
-            </span>
-            {/* secondary — stack */}
-            <span className="font-mono text-xs text-neutral-500 hidden sm:inline">
-              {project.stack.slice(0, 3).join(" · ")}
-            </span>
+          <div className="min-w-0">
+            <div className="flex items-baseline gap-2">
+              <span className="font-mono text-sm font-medium text-neutral-900 group-hover:text-neutral-500 transition-colors">
+                {project.title}
+              </span>
+              <span className="font-mono text-xs text-neutral-400 hidden sm:inline">
+                —
+              </span>
+              <span className="font-mono text-xs text-neutral-500 hidden sm:inline">
+                {project.stack.slice(0, 3).join(" · ")}
+              </span>
+            </div>
+            <div className="sm:hidden">
+              <span className="font-mono text-xs text-neutral-500">
+                {project.stack.slice(0, 3).join(" · ")}
+              </span>
+            </div>
           </div>
-          {/* secondary — date */}
           <span className="font-mono text-xs text-neutral-500 shrink-0">
             {project.date}
           </span>

@@ -44,7 +44,10 @@ const stack = [
     label: "frameworks",
     value: "React · Next.js · Express · Fastify · Angular · Tailwind",
   },
-  { label: "infrastructure", value: "PostgreSQL · MongoDB · Docker" },
+  {
+    label: "infrastructure",
+    value: "PostgreSQL · MongoDB · Docker · AWS · Unix · Github Actions",
+  },
   { label: "game dev", value: "Love2D · CUDA · OpenGL · Raylib" },
 ];
 
@@ -78,11 +81,20 @@ export default function About() {
       {/* bio */}
       <div className="space-y-3 text-sm text-neutral-500 leading-relaxed mb-8 max-w-lg">
         <p>
-          I&apos;m a full-stack developer based in London. I build web apps with
-          TypeScript and Node, and on weekends I make games in Lua and write
-          shaders for fun.
+          I&apos;m a full-stack software engineer based in London with three
+          years of professional experience building production web applications.
+          Currently working on a flagship LMS platform at a software company in
+          the south of England, primarily working with the MEAN stack.
         </p>
-        <p>Currently open to new roles in London or remote.</p>
+        <p>
+          Outside of work I love designing and building video games as well as
+          experimenting with graphics programming.
+        </p>
+        <p>
+          When not at a keyboard I play 7 and 11-aside football every week and
+          cook a lot, both with varying degrees of success.
+        </p>
+        <p>Currently open to new roles in and around London or remote.</p>
       </div>
 
       {/* stack rows */}
@@ -90,9 +102,9 @@ export default function About() {
         {stack.map(({ label, value }) => (
           <div
             key={label}
-            className="flex items-baseline gap-6 py-2.5 border-b border-neutral-100 last:border-none"
+            className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-2.5 border-b border-neutral-100 last:border-none"
           >
-            <span className="font-mono text-xs text-neutral-400 w-28 shrink-0">
+            <span className="font-mono text-xs text-neutral-400 sm:w-28 sm:shrink-0">
               {label}
             </span>
             <span className="font-mono text-xs text-neutral-500 leading-relaxed">
@@ -103,10 +115,10 @@ export default function About() {
       </div>
 
       {/* divider */}
-      <div className="border-t border-neutral-100 mb-6 max-w-lg" />
+      <div className="hidden sm:block w-px h-3.5 bg-neutral-200" />
 
       {/* links + cv */}
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-col sm:flex-row flex-wrap items-center gap-3">
         {links.map(({ label, href, icon, external }) => (
           <Link
             key={href}

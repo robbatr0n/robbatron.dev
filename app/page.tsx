@@ -14,7 +14,7 @@ export default function Home() {
           ROB BARTON
         </h1>
         <p className="text-sm text-neutral-500 leading-relaxed max-w-md">
-          I am a full stack software engineer who specialises in the MERN stack.
+          I am a full stack software engineer currently working with MERN stack.
           On weekends I make games. Below is a collection of projects and
           experiments.
         </p>
