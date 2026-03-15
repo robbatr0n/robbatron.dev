@@ -33,7 +33,7 @@ function ProjectRow({
   isLab: boolean;
 }) {
   return (
-    <li className="last:border-none">
+    <li>
       <Link
         href={`/projects/${project.slug}`}
         className="flex items-center gap-4 py-4 group"

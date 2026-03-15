@@ -35,5 +35,9 @@ export function getAllProjects(): Project[] {
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {
-  return getAllProjects().find((p) => p.slug === slug);
+  const filePath = path.join(projectsDir, `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) return undefined;
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(raw);
+  return { slug, content, ...(data as Omit<Project, "slug" | "content">) };
 }
