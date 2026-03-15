@@ -43,6 +43,14 @@ const ExternalIcon = () => (
   </svg>
 );
 
+const dotColors: Record<string, string> = {
+  live: "#22c55e",
+  "in-progress": "#f59e0b",
+  archived: "#94a3b8",
+  active: "#f59e0b",
+  shelved: "#94a3b8",
+};
+
 export async function generateStaticParams() {
   return getAllProjects().map((p) => ({ slug: p.slug }));
 }
@@ -71,9 +79,22 @@ export default async function ProjectPage({
 
       {/* content */}
       <div className="py-10">
-        <h1 className="text-3xl font-medium leading-snug mb-3">
+        <div className="flex items-center gap-1.5 font-mono text-xs text-neutral-500 mb-3">
+          <span
+            className="rounded-full shrink-0"
+            style={{
+              width: 6,
+              height: 6,
+              background: dotColors[project.status],
+              display: "inline-block",
+            }}
+          />
+          {project.status} · {project.date}
+        </div>
+        <h1 className="text-2xl sm:text-3xl font-medium leading-snug mb-3">
           {project.title}
         </h1>
+
         <p className="text-sm text-neutral-500 leading-relaxed mb-6 max-w-xl">
           {project.description}
         </p>
@@ -86,6 +107,18 @@ export default async function ProjectPage({
               {tech}
             </span>
           ))}
+          <span className="flex items-center gap-1.5 font-mono text-xs text-neutral-500 border border-neutral-200 rounded-full px-2.5 py-1">
+            <span
+              className="rounded-full shrink-0"
+              style={{
+                width: 6,
+                height: 6,
+                background: dotColors[project.status],
+                display: "inline-block",
+              }}
+            />
+            {project.status}
+          </span>
         </div>
 
         <div className="mdx">

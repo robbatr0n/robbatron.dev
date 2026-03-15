@@ -4,7 +4,7 @@ import "./globals.css";
 import { Inter, Fraunces } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const fraunces = Fraunces({ subsets: ["latin"], weight: ["300", "400", "500"] });
+const fraunces = Fraunces({ subsets: ["latin"], weight: ["300", "400", "500"], variable: "--font-display" });
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="font-sans bg-white text-neutral-900 antialiased"
+        className={`${inter.className} ${fraunces.variable} font-sans bg-white text-neutral-900 antialiased`}
       >
         <header className="border-b border-neutral-200">
           <div className="mx-auto max-w-5xl px-4 sm:px-6">
