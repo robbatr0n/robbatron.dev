@@ -107,18 +107,6 @@ export default async function ProjectPage({
               {tech}
             </span>
           ))}
-          <span className="flex items-center gap-1.5 font-mono text-xs text-neutral-500 border border-neutral-200 rounded-full px-2.5 py-1">
-            <span
-              className="rounded-full shrink-0"
-              style={{
-                width: 6,
-                height: 6,
-                background: dotColors[project.status],
-                display: "inline-block",
-              }}
-            />
-            {project.status}
-          </span>
         </div>
 
         <div className="mdx">
