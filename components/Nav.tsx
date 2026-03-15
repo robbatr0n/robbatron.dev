@@ -72,7 +72,7 @@ const links: NavLink[] = [
     external: true,
   },
   {
-    href: "https://linkedin.com/in/rob-barton",
+    href: "https://www.linkedin.com/in/robbatr0n",
     icon: <LinkedInIcon />,
     external: true,
   },

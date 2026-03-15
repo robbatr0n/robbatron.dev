@@ -51,7 +51,7 @@ const stack = [
 const links = [
   {
     label: "linkedin",
-    href: "https://linkedin.com/in/rob-barton",
+    href: "https://www.linkedin.com/in/robbatr0n",
     icon: <LinkedInIcon />,
     external: true,
   },
@@ -78,7 +78,7 @@ export default function About() {
       {/* bio */}
       <div className="space-y-3 text-sm text-neutral-500 leading-relaxed mb-8 max-w-lg">
         <p>
-          I'm a full-stack developer based in London. I build web apps with
+          I&apos;m a full-stack developer based in London. I build web apps with
           TypeScript and Node, and on weekends I make games in Lua and write
           shaders for fun.
         </p>
