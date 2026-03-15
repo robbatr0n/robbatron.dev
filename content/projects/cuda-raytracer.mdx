@@ -1,0 +1,34 @@
+---
+title: "CUDA Real Time Ray Tracer"
+section: "projects"
+status: "archived"
+description: "Real-time GPU-accelerated ray tracer capable of rendering full 3D scenes with reflective and refractive materials, soft shadows and depth of field."
+stack: ["C++", "CUDA", "OpenGl", "GLFW3"]
+github: "https://github.com/robbatr0n/cuda-raytracer"
+date: "2023"
+images:
+  - "/images/projects/cuda-1.png"
+  - "/images/projects/cuda-2.png"
+---
+
+An exploration of physically-based rendering and GPU programming.
+
+## Features
+
+- Physically-based rendering of full 3D scenes in real-time
+- Reflective and refractive materials
+- Soft shadows and depth of field
+- Capable of rendering complex scenes at high framerates
+
+## Stack
+
+Written in CUDA C++. The GPU implementation parallelises ray calculations across
+thousands of threads, with work batched by bounce depth to minimise thread
+divergence and keep performance consistent across complex scenes.
+
+## Implementation
+
+Built as a feature-complete CPU ray tracer first, then ported to CUDA to parallelise
+per-pixel ray calculations across the GPU. Each frame is computed on the GPU and
+passed back to OpenGL for display in a GLFW window, giving real-time output rather
+than rendering to a static image file.
