@@ -129,7 +129,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
       {/* legend */}
       <div className="flex gap-8 mt-6 pt-4 border-t border-neutral-200 flex-wrap">
         <div className="flex flex-col gap-1.5">
-          <span className="font-mono text-sm text-neutral-500 uppercase tracking-widest">
+          <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest">
             projects
           </span>
           {(["live", "in-progress", "archived"] as const).map((s) => (
